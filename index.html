@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Vacaciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario: #f8c6d8;
+      --color-secundario: #ffeef8;
+      --color-acento: #f2a2c0;
+      --color-texto: #4a4a4a;
+      --borde-radio: 15px;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--color-secundario);
+      color: var(--color-texto);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
+      padding: 30px;
+      text-align: center;
+      color: white;
+      border-bottom: 5px solid #fff;
+      font-family: 'Pacifico', cursive;
+    }
+
+    nav {
+      background-color: var(--color-acento);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: var(--borde-radio);
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #fae3ec;
+      color: var(--color-acento);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section, aside {
+      background-color: #ffffff;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: var(--borde-radio);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    section h2, aside h2 {
+      color: var(--color-acento);
+      border-bottom: 2px solid var(--color-acento);
+      padding-bottom: 5px;
+      font-family: 'Pacifico', cursive;
+    }
+
+    article {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .galeria {
+    height: calc( 520px + 3em);
+    width: 400px;
+    margin:1em auto;
+    border: 1px solid #555;
+    position: relative;  
+  }
+  
+  .galeria img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 3s;
+  }
+  
+  .galeria input[type=radio] {
+    position: relative;
+    bottom: calc(-520px - 1.5em);
+    left: .5em;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(6):checked ~ img:nth-of-type(6) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(7):checked ~ img:nth-of-type(7) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(8):checked ~ img:nth-of-type(8) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(9):checked ~ img:nth-of-type(9) {
+    opacity: 1;
+  }
+  
+  .galeria input[type=radio]:nth-of-type(10):checked ~ img:nth-of-type(10) {
+    opacity: 1;
+  }
+    footer {
+      background-color: var(--color-primario);
+      text-align: center;
+      padding: 15px;
+      color: white;
+      margin-top: 30px;
+      border-top: 5px solid #fff;
+    }
+
+    .seccion {
+      display: none;
+    }
+
+    .seccion.activa {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mis Vacaciones Increíbles</h1>
+    <p>Un viaje inolvidable con estilo</p>
+  </header>
+  <nav>
+    <a href="#" onclick="mostrarSeccion('con-quien')">Compañía</a>
+    <a href="#" onclick="mostrarSeccion('donde')">Destino</a>
+    <a href="#" onclick="mostrarSeccion('perfectas')">Vacaciones Perfectas</a>
+    <a href="#" onclick="mostrarSeccion('costos')">Costo Ideal</a>
+  </nav>
+  <main>
+    <section id="con-quien" class="seccion activa">
+      <h2>¿Con quién estuve en mis vacaciones?</h2>
+      <article>
+        <p>Estuve principalmente con mis padres, mi hermano y mis tias en la casa de mi tita la cual amo demasiadoo, tambienn con amigosss mas del gimnasio</p>
+         <div class="galeria">
+    <input type="radio" name="navegacion" id="_1" checked>
+    <input type="radio" name="navegacion" id="_2">
+    <input type="radio" name="navegacion" id="_3">
+    <input type="radio" name="navegacion" id="_4">
+
+    <img src="imgsegundo/may.jpg" width="400" height="520" alt="Galeria CSS 2"  />
+    <img src="imgsegundo/may2.jpg" width="400" height="520" alt="Galeria CSS 3" />
+    <img src="imgsegundo/may3.jpg" width="400" height="520" alt="Galeria CSS 4" />
+    <img src="imgsegundo/may4.jpg" width="400" height="520" class="img2" alt="Galeria CSS 5" />
+   
+    </div>
+      </article>
+    </section>
+
+    <section id="donde" class="seccion">
+      <h2>¿A dónde fuimos y qué hicimos?</h2>
+      <article>
+        <p>Pues con mis padres fuimos a un pueblo magico que se llama "TEPOTZOTLAN" estuvimos recorriendo el lugarr mientras caminabamos encontramos un bello jardin y no dudamos en tomarnos fotos, comimos mi comida favorita que son los boneless y la pasamos muy bien, con mis papis igual fuimos a un balneario muy lindo ese plan salio de la nada pero fue el dia mas bello ya que nos aventamos de los toboganes, nadabamos juntos los 4 y sobre todo jugabamos, cuando fue semana santa en casa de mi tita hicieron mariscada lit comimos de todo tipo de mariscos ese dia pusieron la alberca que sinseramente no me meti ya que no me gusta asi, me la pase todas mis tardes en el gimnasio aqui conoci nuevas personasss eh hice muchos amigoss y eso fue lo que hice en mis vacaciones.</p>
+        <div class="galeria">
+    <input type="radio" name="navegacion" id="_1" checked>
+    <input type="radio" name="navegacion" id="_2">
+    <input type="radio" name="navegacion" id="_3">
+    <input type="radio" name="navegacion" id="_4">
+
+    <img src="imgsegundo/tepo.jpg" width="400" height="520" alt="Galeria CSS 2"  />
+    <img src="imgsegundo/may5.jpg" width="400" height="520" alt="Galeria CSS 3" />
+    <img src="imgsegundo/balneario.jpg" width="400" height="520" alt="Galeria CSS 4" />
+    <img src="imgsegundo/may7.jpg" width="400" height="520" class="img2" alt="Galeria CSS 5" />
+      </article>
+    </section>
+
+   
+
+    <section id="perfectas" class="seccion">
+      <h2>Mi Vacación Perfecta</h2>
+      <article>
+        <p>Me gustaría ir a New York o Suecia</p>
+        <p>Me encantaria viajar en avion en primera clase para que sea un viaje comodo</p>
+        <p>En New York me encantaria hospedarme en el hotel Empire ya que es super lujuso ademas que ahi vivia Chuk bass personaje de la serie gossip girl es una de las razones que elegiria estarr ahii, en Suecia elegiria un Icehotel ya que es otro tipo de experiencia y puess seria muy increible</p>
+        <p>New york me interesa mucho conocer ya que pues siempre ah sido mi sueño frustado si voy iria a muchos lugares como central park, el museo MET, el barrio Uppear Siide en manhattan, el Golden State etc, En suecia lo que mas quisiera ver son las Auroras boreales ya que se me hace algo super increible de verr, me encantatia conocer palacio drottningholm y pues ese seria mis viajes soñadoss</p>
+         <div class="galeria">
+    <input type="radio" name="navegacion" id="_1" checked>
+    <input type="radio" name="navegacion" id="_2">
+    <input type="radio" name="navegacion" id="_3">
+
+    <img src="imgsegundo/viaje.jpg" width="400" height="520" alt="Galeria CSS 2"  />
+    <img src="imgsegundo/viaje2.jpg" width="400" height="520" alt="Galeria CSS 3" />
+    <img src="imgsegundo/viaje3.jpg" width="400" height="520" alt="Galeria CSS 4" />
+      </article>
+    </section>
+
+    <section id="costos" class="seccion">
+      <h2>Costo de mi viaje ideal</h2>
+      <article>
+        <ul>
+          <li>Vuelo ida y vuelta: <strong>$1,697 USD</strong></li>
+          <li>Hospedaje (10 días): <strong>$889 USD</strong></li>
+          <li>Comidas y actividades: <strong>$1,288 USD</strong></li>
+          <li>Transportes internos: <strong>$1,378 USD</strong></li>
+          <li><strong>Total: $5,225 USD</strong></li>
+        </ul>
+      </article>
+      <aside>
+        <h2>Galería de mi viaje ideal</h2>
+       
+      </aside>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Mis Vacaciones. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.seccion');
+      secciones.forEach(seccion => {
+        seccion.classList.remove('activa');
+      });
+      document.getElementById(id).classList.add('activa');
+    }
+  </script>
+</body>
+</html>
