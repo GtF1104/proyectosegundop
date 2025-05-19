@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Vacaciones</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="may.css">
   <style>
     :root {
       --color-primario: #f8c6d8;
@@ -157,6 +158,7 @@
     .seccion.activa {
       display: block;
     }
+    
   </style>
 </head>
 <body>
@@ -240,7 +242,36 @@
       </article>
       <aside>
         <h2>Galería de mi viaje ideal</h2>
-       
+        <div class="carrusel-container">
+    <div class="carrusel" id="carrusel">
+      <div class="slide activo">
+        <a href="Museo.html"><img src="imgsegundo/uno.jpg" width="300" alt="Museo del Mamut" /></a>
+        
+        <div class="texto">
+          <h3>5th Avenue</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <a href="Famex.html"><img src="imgsegundo/dos.jpg" width="300" alt="Famex" /></a>
+        <div class="texto">
+          <h3>Grand Central Terminal</h3>
+    
+        </div>
+      </div>
+      <div class="slide">
+        <a href="uno.html"><img src="imgsegundo/tres.jpg" width="300" alt="Aviario" /></a>
+        <div class="texto">
+          <h3>Museum Studies</h3>
+        
+        </div>
+      </div>
+    </div>
+    
+    <button class="nav prev" id="prev">&#10094;</button>
+    <button class="nav next" id="next">&#10095;</button>
+    
+    <div class="indicadores" id="indicadores"></div>
+  </div>
       </aside>
     </section>
   </main>
@@ -256,5 +287,70 @@
       document.getElementById(id).classList.add('activa');
     }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const carrusel = document.getElementById('carrusel');
+const slides = carrusel.querySelectorAll('.slide');
+const indicadores = document.getElementById('indicadores');
+const btnPrev = document.getElementById('prev');
+const btnNext = document.getElementById('next');
+
+let index = 0;
+
+slides.forEach((_, i) => {
+  const punto = document.createElement('div');
+  punto.classList.add('punto');
+  if (i === 0) punto.classList.add('activo');
+  punto.addEventListener('click', () => mostrarSlide(i));
+  indicadores.appendChild(punto);
+});
+
+const actualizarCarrusel = () => {
+  carrusel.style.transform = `translateX(-${index * 100}%)`;
+  indicadores.querySelectorAll('.punto').forEach((p, i) =>
+    p.classList.toggle('activo', i === index)
+  );
+};
+
+const mostrarSlide = (i) => {
+  index = i;
+  actualizarCarrusel();
+};
+
+btnNext.addEventListener('click', () => {
+  index = (index + 1) % slides.length;
+  actualizarCarrusel();
+});
+
+btnPrev.addEventListener('click', () => {
+  index = (index - 1 + slides.length) % slides.length;
+  actualizarCarrusel();
+});
+</script>
 </body>
 </html>
